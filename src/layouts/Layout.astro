@@ -2,50 +2,91 @@
 import "../styles/global.css";
 
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" class="scroll-smooth">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-		
-		<!-- Fonts -->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-	</head>
-	<body class="font-['Outfit'] bg-gray-50 text-gray-900 overflow-x-hidden">
-		<slot />
-	</body>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/webp" href="/escudo.webp" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Primary Meta Tags -->
+    <title>{title} | IER La Aurora - El Carmen de Viboral</title>
+    <meta
+      name="title"
+      content={`${title} | IER La Aurora - El Carmen de Viboral`}
+    />
+    <meta
+      name="description"
+      content="Institución Educativa Rural La Aurora en El Carmen de Viboral, Antioquia. Ofrecemos educación de calidad con enfoque constructivista, fomentando la inclusión, el pensamiento crítico y el desarrollo integral de nuestros estudiantes."
+    />
+    <meta
+      name="keywords"
+      content="El Carmen de Viboral, La Aurora, educación, IER La Aurora, institución educativa rural, Antioquia, formación integral, constructivismo, inclusión educativa, pensamiento crítico, educación básica, educación secundaria, colegio rural"
+    />
+    <meta name="author" content="IER La Aurora" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={`${title} | IER La Aurora`} />
+    <meta
+      property="og:description"
+      content="Educación integral y de calidad en la zona rural de El Carmen de Viboral. Conoce nuestra misión, visión y valores institucionales."
+    />
+    <meta property="og:image" content="/escudo.webp" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={`${title} | IER La Aurora`} />
+    <meta
+      property="twitter:description"
+      content="Educación integral y de calidad en la zona rural de El Carmen de Viboral. Conoce nuestra misión, visión y valores institucionales."
+    />
+    <meta property="twitter:image" content="/escudo.webp" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={Astro.url} />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="font-['Outfit'] bg-gray-50 text-gray-900 overflow-x-hidden">
+    <slot />
+  </body>
 </html>
 
 <style is:global>
-	:root {
-		--color-yellow: #FCE300; /* Chicken Yellow */
-		--color-navy: #000080;   /* Navy Blue */
-		--color-white: #ffffff;
-	}
-    /* Optional: Scrollbar styling */
-    ::-webkit-scrollbar {
-        width: 10px;
-    }
-    ::-webkit-scrollbar-track {
-        background: #f1f1f1;
-    }
-    ::-webkit-scrollbar-thumb {
-        background: #888;
-        border-radius: 5px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-        background: var(--color-navy);
-    }
+  :root {
+    --color-yellow: #fce300; /* Chicken Yellow */
+    --color-navy: #000080; /* Navy Blue */
+    --color-white: #ffffff;
+  }
+  /* Optional: Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-navy);
+  }
 </style>
