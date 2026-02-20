@@ -1,0 +1,53 @@
+---
+
+---
+
+<section class="py-20 md:py-32 px-6">
+  <div
+    class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
+  >
+    <div class="scroll-reveal-left">
+      <div class="w-16 h-1 bg-[#FCE300] mb-6"></div>
+      <h2 class="text-4xl md:text-5xl font-bold text-[#000080] mb-6">
+        Gestión Institucional
+      </h2>
+      <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+        La gestión institucional en la Institución Educativa Rural La Aurora se
+        orienta bajo los lineamientos de la Guía 34 del Ministerio de Educación
+        Nacional, promoviendo el mejoramiento continuo.
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {
+          [
+            {
+              title: "Gestión Directiva",
+              desc: "Promueve el liderazgo y la planeación estratégica institucional. Se encarga de la formulación y evaluación del PEI.",
+            },
+            {
+              title: "Gestión Académica",
+              desc: "Enfocada en el desarrollo curricular, las prácticas pedagógicas, la evaluación del aprendizaje y la formación integral.",
+            },
+            {
+              title: "Gestión Administrativa y Financiera",
+              desc: "Garantiza el uso eficiente, transparente y responsable de los recursos institucionales y el talento humano.",
+            },
+            {
+              title: "Gestión de la Comunidad",
+              desc: "Fortalece la relación entre la escuela, las familias y la comunidad. Promueve la participación social y la convivencia.",
+            },
+          ].map((item) => (
+            <div class="bg-gray-50 p-4 rounded-lg border-l-4 border-[#FCE300] shadow-sm hover:shadow-md transition-shadow">
+              <h4 class="font-bold text-[#000080] mb-2">{item.title}</h4>
+              <p class="text-sm text-gray-600">{item.desc}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+    <div
+      class="relative h-fit w-full bg-gray-200 rounded-2xl overflow-hidden shadow-2xl scroll-reveal-right hover-scale"
+    >
+      <img src="/section-4.webp" class="object-cover" />
+    </div>
+  </div>
+</section>

@@ -1,0 +1,128 @@
+---
+export const prerender = false;
+
+import Layout from "../../layouts/Layout.astro";
+import { ifIsAValidStudent } from "../../lib/verifications/ifIsAValidStudent";
+import { ifStudentHasVoted } from "../../lib/verifications/ifStudentHasVoted";
+import { getCandidates } from "../../lib/Info/getCandidates";
+import VoteSelect from "../../components/Votes/VoteSelect.tsx";
+import type { Candidate } from "../../types/types";
+
+const { studentId } = Astro.params;
+
+let isError = {
+	error: false,
+	message: ""
+};
+
+let personerys: Candidate[] = []
+let comptrollers: Candidate[] = []
+
+if (!studentId) {
+	isError.error = true;
+	isError.message = "No se proporcionó un número de identificación.";
+}
+
+const { data: student, error: studentError } = await ifIsAValidStudent(studentId!)
+
+if (studentError) {
+	isError.error = true;
+	isError.message = "Error al verificar el estudiante.";
+}
+
+if (!student) {
+	isError.error = true;
+	isError.message = "No se encontró un estudiante con ese número de identificación.";
+}
+
+const { data: noVoted, error: hasVotedError } = await ifStudentHasVoted(studentId!)
+
+if (hasVotedError) {
+	isError.error = true;
+	isError.message = "Error al verificar el voto.";
+}
+
+if (!noVoted) {
+	isError.error = true;
+	isError.message = "Ya has votado.";
+}
+
+if (student && noVoted) {
+	const { data, error: candidatesError } = await getCandidates()
+
+	const candidates = data as Candidate[]
+
+	if (candidatesError) {
+		isError.error = true;
+		isError.message = "Error al obtener los candidatos.";
+	}
+
+	if (!candidates) {
+		isError.error = true;
+		isError.message = "No se encontraron candidatos.";
+	}
+
+	personerys =  candidates?.filter((candidate) => candidate.position === "personero")!
+	comptrollers =  candidates?.filter((candidate) => candidate.position === "contralor")!
+}
+---
+
+<Layout title="Votaciones 2026 | IER La Aurora">
+  <main
+    class="min-h-screen flex flex-col items-center justify-center px-6 bg-gray-50"
+  >
+    <section
+      class="w-full max-w-2xl bg-white p-12 m-12 rounded-3xl shadow-2xl border border-gray-100"
+    >
+      <div class="flex flex-col items-center text-center mb-10">
+        <div class="w-16 h-1 bg-[#FCE300] mb-6"></div>
+        <h1 class="text-4xl md:text-5xl font-bold text-[#000080] mb-4">
+          Votaciones 2026
+        </h1>
+        <div class="bg-gray-100 px-6 py-3 rounded-full mt-4">
+          <p class="text-[#000080] font-semibold">
+            Estudiante: <span class="text-gray-600">{studentId}</span>
+          </p>
+        </div>
+      </div>
+
+      {isError.error ? (
+				<div class="text-center space-y-6">
+					<p class="text-gray-600 text-lg">
+						{isError.message}
+					</p>
+					<a
+						href="/vote-candidates"
+						class="inline-block text-[#000080] font-bold hover:underline"
+					>
+						Volver al inicio
+					</a>
+				</div>
+			) : (
+				<div class="text-center space-y-6">
+					<p class="text-gray-600 text-lg">
+						Has ingresado correctamente. Elige a tu candidato a continuación.
+					</p>
+
+					<p class="text-gray-600 text-lg">
+						Puedes elegir a un personero y un contralor.
+					</p>
+
+					<VoteSelect
+						personerys={personerys}
+						comptrollers={comptrollers}
+						studentId={studentId!}
+						client:load
+					/>
+
+					<a
+						href="/vote-candidates"
+						class="inline-block text-[#000080] font-bold hover:underline mt-4"
+					>
+						Volver al inicio
+					</a>
+				</div>
+			)}
+    </section>
+  </main>
+</Layout>

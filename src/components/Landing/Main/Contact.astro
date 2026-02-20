@@ -1,0 +1,120 @@
+---
+import { actions } from "astro:actions";
+---
+
+<section id="contacto" class="py-16 px-6 bg-white shrink">
+  <div class="max-w-7xl mx-auto">
+    <!-- Header -->
+    <div class="mb-8">
+      <h2 class="text-4xl font-bold text-[#000080] inline-block relative pb-2">
+        Contáctanos
+        <span class="absolute bottom-0 left-0 w-full h-1 bg-[#FCE300]"></span>
+      </h2>
+    </div>
+
+    <!-- Description -->
+    <p class="text-gray-700 text-lg mb-8 max-w-4xl">
+      Puedes comunicarte con nosotros o visitarnos en nuestra sede principal en
+      el municipio de <span class="font-bold"
+        >El Carmen de Viboral, Antioquia</span
+      >. Estamos siempre dispuestos a atender a estudiantes, padres de familia y
+      comunidad educativa.
+    </p>
+
+    <!-- Content Grid -->
+    <div class="flex flex-col lg:flex-row gap-8 lg:gap-12">
+      <!-- Map Section -->
+      <div
+        class="w-full lg:w-1/2 h-100 lg:h-auto min-h-100 rounded-2xl overflow-hidden shadow-lg border border-gray-100"
+      >
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63390.06722229444!2d-75.37712389999999!3d6.084907899999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e46a3d5de03daeb%3A0x3cb908bb8a391a2d!2sInstituci%C3%B3n%20Educativa%20Rural%20la%20Aurora%2C%20sede%20Aurora!5e0!3m2!1ses-419!2sco!4v1761253929886!5m2!1ses-419!2sco"
+          width="100%"
+          height="100%"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          class="w-full h-full"></iframe>
+      </div>
+
+      <!-- Contact Info Section -->
+      <div class="w-full lg:w-1/2 flex flex-col justify-center space-y-6">
+        <!-- Address -->
+        <div class="flex items-start space-x-4">
+          <span class="text-pink-600 text-xl mt-1">📍</span>
+          <div>
+            <h3 class="font-bold text-gray-900 text-lg">Dirección:</h3>
+            <p class="text-gray-600 text-lg">
+              Vereda La Aurora, El Carmen de Viboral, Antioquia
+            </p>
+          </div>
+        </div>
+
+        <!-- Phone -->
+        <div class="flex items-start space-x-4">
+          <span class="text-pink-600 text-xl mt-1">📞</span>
+          <div>
+            <h3 class="font-bold text-gray-900 text-lg">Teléfono:</h3>
+            <p class="text-gray-600 text-lg">(604) 566 6384</p>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="flex items-start space-x-4">
+          <span class="text-pink-600 text-xl mt-1">✉️</span>
+          <div>
+            <h3 class="font-bold text-gray-900 text-lg">
+              Correo institucional:
+            </h3>
+            <p class="text-gray-600 text-lg break-all">
+              ierurallaaurora@sedantioquia.edu.co
+            </p>
+          </div>
+        </div>
+
+        <!-- Hours -->
+        <div class="flex items-start space-x-4">
+          <span class="text-pink-600 text-xl mt-1">🕒</span>
+          <div>
+            <h3 class="font-bold text-gray-900 text-lg">Jornada:</h3>
+            <p class="text-gray-600 text-lg">
+              Completa – Preescolar, Básica Primaria, Secundaria y Media
+            </p>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { actions } from "astro:actions";
+
+  const form = document.querySelector("form");
+	const formMessage = document.querySelector("#form-message") as HTMLSpanElement;
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    const name = formData.get("name") as string;
+    const email = formData.get("email") as string;
+    const message = formData.get("message") as string;
+
+    const { error } = await actions.sendEmail({ name, email, message });
+
+    if (!error) {
+      form.reset();
+      formMessage.textContent = "Mensaje enviado correctamente";
+			formMessage.classList.add("text-green-500");
+    } else {
+      formMessage.textContent = "Error al enviar el mensaje";
+			formMessage.classList.add("text-red-500");
+    }
+  });
+</script>
