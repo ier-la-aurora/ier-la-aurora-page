@@ -1,0 +1,35 @@
+---
+import { cardsOfValors, icons } from "../../../lib/cardsOfValors";
+
+const icon = (i: string) => {
+  const typedIcon = i as keyof typeof icons
+  const icon = icons[typedIcon]
+
+	return icon
+}
+---
+
+<section id="valores" class="py-20 md:py-32 px-6 bg-[#000080] text-white">
+  <div class="max-w-7xl mx-auto text-center mb-16 scroll-reveal">
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">Nuestros Valores</h2>
+    <div class="w-24 h-1 bg-[#FCE300] mx-auto"></div>
+  </div>
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    {
+      cardsOfValors.map((value, i) => (
+        <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-2 scroll-reveal-up stagger-item">
+          <div class="w-16 h-16 bg-[#FCE300] rounded-full flex items-center justify-center mb-6 mx-auto text-[#000080] font-bold text-2xl">
+            {() => {
+              const Icon = icon(value.id)
+              return <Icon class="w-10 h-10" />
+            }}
+          </div>
+          <h3 class="text-2xl font-bold mb-4 text-center">{value.title}</h3>
+          <p class="text-gray-200 text-center leading-relaxed">
+            {value.description}
+          </p>
+        </div>
+      ))
+    }
+  </div>
+</section>

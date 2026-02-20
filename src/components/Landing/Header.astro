@@ -1,0 +1,43 @@
+---
+---
+
+<!-- Hero Section -->
+<header
+	id="inicio"
+  class="relative h-screen flex items-center justify-center overflow-hidden bg-[#000080]"
+>
+  <!-- Background Overlay / Image Placeholder -->
+  <div class="absolute inset-0 bg-linear-to-br from-[#00082d] to-transparent opacity-90 z-10"></div>
+  <div class="absolute inset-0 bg-gray-600 mix-blend-multiply z-0">
+    <!-- Placeholder for Hero Image -->
+    <div
+      class="w-full h-full bg-cover bg-center bg-[url('/bg-hero.jpeg')]"
+    ></div>
+  </div>
+
+  <div class="relative z-20 text-center text-white px-4 max-w-4xl mx-auto scroll-reveal">
+    <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-tight">
+      Formando el Futuro con Excelencia
+    </h1>
+    <p class="text-xl md:text-2xl text-gray-200 mb-10 max-w-2xl mx-auto">
+      Una educación integral que inspira, innova y transforma vidas desde los
+      primeros pasos.
+    </p>
+    <div class="flex flex-col md:flex-row gap-4 justify-center">
+      <a href='#nosotros' class="bg-[#FCE300] text-[#000080] px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-white hover:scale-105 transition-all duration-300">
+        Conoce más
+      </a>
+      <a href='#contacto' class="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-[#000080] hover:scale-105 transition-all duration-300">
+        Contáctanos
+      </a>
+      <a href="/public/SIEE_Aurora_2025.docx" download="SIEE_Aurora_2025.docx" class="bg-[#FCE300] text-[#000080] px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-white hover:scale-105 transition-all duration-300">
+        Descargar SIEE {new Date().getFullYear()}
+      </a>
+    </div>
+  </div>
+
+  <!-- Scroll Down Indicator -->
+  <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
+    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+  </div>
+</header>

@@ -1,0 +1,52 @@
+---
+import { Download } from "@lucide/astro";
+
+
+---
+
+<section id="himno" class="py-20 md:py-32 px-6 bg-white">
+  <div
+    class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
+  >
+    <div
+      class="relative h-fit w-full bg-gray-200 rounded-2xl overflow-hidden shadow-2xl scroll-reveal-left hover-scale order-2 lg:order-1"
+    >
+      <img
+        src="/image.png"
+        alt="Escudo del colegio IER La Aurora"
+        class="object-contain w-full h-full inset-0 flex items-center justify-center bg-white p-8"
+      />
+    </div>
+    <div class="scroll-reveal-right order-1 lg:order-2">
+      <div class="w-16 h-1 bg-[#FCE300] mb-6"></div>
+      <h2 class="text-4xl md:text-5xl font-bold text-[#000080] mb-6">
+        Himno Institucional
+      </h2>
+      <div class="space-y-6 text-gray-600 leading-relaxed">
+        <p>
+          El himno de la Institución Educativa Rural La Aurora es un símbolo de
+          identidad que refleja nuestros valores, principios y el compromiso con
+          la formación integral de nuestros estudiantes. A través de sus
+          estrofas, se exalta el amor por el conocimiento, el respeto por la
+          naturaleza y el orgullo de pertenecer a nuestra comunidad educativa.
+        </p>
+        <p>
+          Cada mañana, nuestros estudiantes entonan con orgullo este himno,
+          recordando el legado de quienes nos precedieron y renovando su
+          compromiso con la excelencia académica y los valores que nos
+          caracterizan.
+        </p>
+        <div class="pt-4">
+          <a
+            href="/himno IER LA AURORA.mpeg"
+            download="Himno IER La Aurora.mpeg"
+            class="inline-flex items-center gap-3 bg-[#000080] text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:bg-[#0A192F] hover:scale-105 transition-all duration-300"
+          >
+            <Download class="w-6 h-6" />
+            Descargar Himno
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
