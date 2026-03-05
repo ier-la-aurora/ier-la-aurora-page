@@ -1,7 +1,3 @@
----
-import { actions } from "astro:actions";
----
-
 <section id="contacto" class="py-16 px-6 bg-white shrink">
   <div class="max-w-7xl mx-auto">
     <!-- Header -->
@@ -90,31 +86,3 @@ import { actions } from "astro:actions";
     </div>
   </div>
 </section>
-
-<script>
-  import { actions } from "astro:actions";
-
-  const form = document.querySelector("form");
-	const formMessage = document.querySelector("#form-message") as HTMLSpanElement;
-
-  form?.addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    const formData = new FormData(form);
-
-    const name = formData.get("name") as string;
-    const email = formData.get("email") as string;
-    const message = formData.get("message") as string;
-
-    const { error } = await actions.sendEmail({ name, email, message });
-
-    if (!error) {
-      form.reset();
-      formMessage.textContent = "Mensaje enviado correctamente";
-			formMessage.classList.add("text-green-500");
-    } else {
-      formMessage.textContent = "Error al enviar el mensaje";
-			formMessage.classList.add("text-red-500");
-    }
-  });
-</script>
