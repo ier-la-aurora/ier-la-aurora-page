@@ -1,0 +1,67 @@
+---
+import { Calendar, ArrowLeft, ChevronDown } from "@lucide/astro";
+---
+
+<!-- Events Header / Hero Section -->
+<header
+  class="relative min-h-screen flex items-center justify-center bg-[#000080] overflow-hidden pt-24 pb-16"
+>
+  <!-- Background Overlay / Image Placeholder consistent with Landing -->
+  <!-- Background Overlay / Image Placeholder -->
+  <div class="absolute inset-0 bg-linear-to-br from-[#00082d] to-transparent opacity-90 z-10"></div>
+  <div class="absolute inset-0 bg-gray-600 mix-blend-multiply z-0">
+    <!-- Placeholder for Hero Image -->
+    <div
+      class="w-full h-full bg-cover bg-center bg-[url('/bg-hero.jpeg')]"
+    ></div>
+  </div>
+
+  <div class="z-20 text-center text-white px-4">
+    <!-- Breadcrumb / Back Navigation -->
+    <div class="mb-6 flex justify-center">
+      <a
+        href="/"
+        class="flex items-center p-4 gap-2 text-sm font-semibold text-gray-200 hover:text-[#FCE300] bg-white/10 rounded-full border border-white/20 transition-all duration-300 hover:scale-105"
+      >
+        <ArrowLeft class="w-5 h-5" />
+        <span>Volver al Inicio</span>
+      </a>
+    </div>
+
+    <!-- Category Tag -->
+    <div class="inline-flex items-center gap-2 p-4 rounded-full bg-[#FCE300]/20 border border-[#FCE300]/40 text-[#FCE300] text-sm font-semibold mb-6">
+      <Calendar class="w-4 h-4" />
+      <span>Vida Escolar & Comunidad</span>
+    </div>
+
+    <!-- Main Title -->
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight tracking-tight text-white">
+      Eventos Institucionales
+    </h1>
+
+    <!-- Decorative Accent Line -->
+    <div class="w-20 h-1.5 bg-[#FCE300] mx-auto mb-6 rounded-full"></div>
+
+    <!-- Subtitle -->
+    <p class="text-lg md:text-2xl text-gray-200 mb-10 max-w-2xl mx-auto leading-relaxed">
+      Revive las actividades, proyectos pedagógicos y momentos destacados que enriquecen la formación de nuestros estudiantes en la IER La Aurora.
+    </p>
+
+    <!-- Call to actions / Quick jump -->
+    <div class="flex flex-wrap gap-4 justify-center items-center">
+      <a
+        href="#felix-y-susana"
+        class="bg-[#FCE300] text-[#000080] p-4 rounded-full font-bold text-base md:text-lg shadow-lg hover:bg-white hover:scale-105 transition-all duration-300 inline-flex items-center gap-2"
+      >
+        <span>Ver Primer Evento</span>
+        <ChevronDown class="w-5 h-5 animate-bounce" />
+      </a>
+      <a
+        href="/#contacto"
+        class="border-2 border-white/80 text-white p-4 rounded-full font-bold text-base md:text-lg hover:bg-white hover:text-[#000080] hover:scale-105 transition-all duration-300"
+      >
+        Contacto
+      </a>
+    </div>
+  </div>
+</header>

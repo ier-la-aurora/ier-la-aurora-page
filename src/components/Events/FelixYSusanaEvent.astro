@@ -1,0 +1,259 @@
+---
+import {
+  Play,
+  Video,
+  BookOpen,
+  HeartHandshake,
+  Smile,
+  Sparkles,
+  CheckCircle2,
+} from "@lucide/astro";
+---
+
+<!-- Section: Felix y Susana Event -->
+<section id="felix-y-susana" class="py-20 md:py-28 px-6 bg-gray-50 relative">
+  <div class="max-w-6xl mx-auto">
+    <!-- Main Event Card -->
+    <article
+      class="bg-white rounded-3xl p-8 md:p-14 shadow-xl border border-gray-100"
+    >
+      <!-- Top Badges & Meta -->
+      <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+        <div class="flex flex-wrap items-center gap-3">
+          <span
+            class=" rounded-full bg-[#000080]/10 text-[#000080] font-semibold text-xs tracking-wider uppercase flex items-center gap-2"
+          >
+            <Sparkles class="w-3.5 h-3.5 text-[#000080]" />
+            Alianza Institucional
+          </span>
+          <span
+            class="rounded-full bg-amber-100 text-amber-900 font-semibold text-xs tracking-wider uppercase flex items-center gap-2"
+          >
+            <Smile class="w-3.5 h-3.5 text-amber-700" />
+            Bienestar Infantil
+          </span>
+        </div>
+        <span class="text-sm font-medium text-gray-500">
+          Actividad destacada
+        </span>
+      </div>
+
+      <!-- Accent line & Title -->
+      <div class="w-16 h-1 bg-[#FCE300] mb-6 rounded-full"></div>
+      <h2
+        class="text-3xl sm:text-4xl md:text-5xl font-bold text-[#000080] mb-4 tracking-tight"
+      >
+        Félix y Susana
+      </h2>
+      <p class="text-lg md:text-xl font-semibold text-gray-700 mb-8">
+        Jornada inaugural del programa de apoyo pedagógico con la Fundación SURA
+      </p>
+
+      <!-- Supporting Text (Redacted & Enriched) -->
+      <div
+        class="prose max-w-none text-gray-600 text-base md:text-lg leading-relaxed space-y-4 mb-10"
+      >
+        <p>
+          Esta significativa jornada marcó el inicio del acompañamiento
+          pedagógico de la <strong class="text-[#000080] font-semibold"
+            >Fundación SURA</strong
+          > en nuestra institución educativa. Una actividad de apertura pensada para
+          enriquecer los procesos de enseñanza y fortalecer el bienestar integral,
+          la salud emocional y la sana convivencia de nuestros niños y niñas.
+        </p>
+        <p>
+          A través del reconocido programa <strong
+            class="text-[#000080] font-semibold">"Félix y Susana"</strong
+          >, la comunidad escolar recibió valioso material educativo, kits
+          didácticos y guías formativas orientadas a promover el autocuidado, la
+          expresión constructiva de emociones y el respeto mutuo. Una apuesta
+          conjunta que brinda a docentes y estudiantes herramientas prácticas
+          para mantener a la infancia feliz, sana y motivada en cada etapa de su
+          aprendizaje.
+        </p>
+      </div>
+
+      <!-- Key Pillars / Highlights -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
+        <div
+          class="p-6 rounded-2xl bg-gray-50 border border-gray-100 hover:border-[#000080]/30 hover:shadow-md transition-all duration-300"
+        >
+          <div
+            class="w-12 h-12 rounded-xl bg-[#000080]/10 flex items-center justify-center text-[#000080] mb-4"
+          >
+            <BookOpen class="w-6 h-6" />
+          </div>
+          <h3 class="font-bold text-[#000080] text-lg mb-2">
+            Material Pedagógico
+          </h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Dotación de recursos didácticos y narrativos diseñados para el
+            desarrollo de competencias formativas en el aula.
+          </p>
+        </div>
+
+        <div
+          class="p-6 rounded-2xl bg-gray-50 border border-gray-100 hover:border-[#000080]/30 hover:shadow-md transition-all duration-300"
+        >
+          <div
+            class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-700 mb-4"
+          >
+            <Smile class="w-6 h-6" />
+          </div>
+          <h3 class="font-bold text-[#000080] text-lg mb-2">
+            Salud y Bienestar
+          </h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Estrategias para cultivar hábitos de vida saludables, autoestima y
+            entornos protectores para los estudiantes.
+          </p>
+        </div>
+
+        <div
+          class="p-6 rounded-2xl bg-gray-50 border border-gray-100 hover:border-[#000080]/30 hover:shadow-md transition-all duration-300"
+        >
+          <div
+            class="w-12 h-12 rounded-xl bg-[#000080]/10 flex items-center justify-center text-[#000080] mb-4"
+          >
+            <HeartHandshake class="w-6 h-6" />
+          </div>
+          <h3 class="font-bold text-[#000080] text-lg mb-2">
+            Alianza con Futuro
+          </h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Trabajo colaborativo entre la IER La Aurora y Fundación SURA en
+            favor de la educación rural de calidad.
+          </p>
+        </div>
+      </div>
+
+      <!-- VIDEO SECTION CONTAINER (Debajo, deja un espacio en el que se va a mostrar un video) -->
+      <div class="pt-8 border-t border-gray-200">
+        <div
+          class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6"
+        >
+          <div>
+            <div
+              class="flex items-center gap-2 text-sm font-semibold text-[#000080] uppercase tracking-wider mb-1"
+            >
+              <Video class="w-4 h-4 text-rose-600" />
+              <span>Registro Audiovisual</span>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900">
+              Video de la Actividad
+            </h3>
+          </div>
+          <div
+            class="text-xs sm:text-sm text-gray-500 bg-gray-100 px-3.5 py-1.5 rounded-full w-fit"
+          >
+            Espacio reservado para video
+          </div>
+        </div>
+
+        <!-- Video Player Space / Container -->
+        <div
+          class="relative w-full aspect-video rounded-2xl md:rounded-3xl overflow-hidden bg-slate-950 shadow-2xl border border-slate-800 group"
+        >
+          <!-- Background Ambient Glow & Placeholder Texture -->
+          <div
+            class="absolute inset-0 bg-linear-to-tr from-[#00082d] via-slate-900 to-[#000080]/50 opacity-90"
+          >
+          </div>
+          <div
+            class="absolute -right-20 -bottom-20 w-80 h-80 bg-[#FCE300]/10 rounded-full blur-3xl pointer-events-none"
+          >
+          </div>
+          <div
+            class="absolute -left-20 -top-20 w-80 h-80 bg-[#000080]/40 rounded-full blur-3xl pointer-events-none"
+          >
+          </div>
+
+          <!-- Video Element (Ready to receive source file) -->
+          <!-- 
+            Para mostrar tu video:
+            Descomenta la etiqueta <video> o <iframe> y coloca la ruta de tu archivo.
+            Ejemplo: <video class="w-full h-full object-cover" controls src="/videos/felix-y-susana.mp4"></video>
+          -->
+          <video
+            id="felix-video-player"
+            class="w-full h-full object-cover relative z-10"
+            controls
+            preload="metadata"
+            src="FelixYSusana.mov"
+          >
+            <!-- Inserte la etiqueta source aquí: <source src="/videos/felix-y-susana.mp4" type="video/mp4" /> -->
+            Tu navegador no soporta la reproducción de video HTML5.
+          </video>
+
+          <!-- Interactive Placeholder / Poster Showcase -->
+          <div
+            id="video-placeholder-container"
+            class="relative z-20 w-full h-full flex flex-col items-center justify-center p-6 text-center"
+          >
+            <!-- Play Button Container with pulse ring -->
+            <div class="relative mb-6">
+              <div
+                class="absolute inset-0 rounded-full bg-[#FCE300]/30 animate-ping"
+              >
+              </div>
+              <div
+                class="relative w-20 h-20 md:w-24 md:h-24 rounded-full bg-[#FCE300] text-[#000080] flex items-center justify-center shadow-2xl cursor-pointer hover:scale-110 hover:bg-white hover:text-[#000080] transition-all duration-300 group-hover:shadow-[0_0_30px_rgba(252,227,0,0.5)]"
+                title="Reproducir video"
+              >
+                <Play class="w-9 h-9 md:w-11 md:h-11 fill-current ml-1" />
+              </div>
+            </div>
+
+            <!-- Title & Subtitle inside Player -->
+            <h4
+              class="text-xl md:text-2xl font-bold text-white mb-2 max-w-lg leading-snug"
+            >
+              Actividad: Félix y Susana en la IER La Aurora
+            </h4>
+            <p class="text-sm md:text-base text-gray-300 max-w-md mb-4">
+              Apertura del programa educativo en convenio con la Fundación SURA
+            </p>
+
+            <!-- Video Status Badge -->
+            <div
+              class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-xs font-medium text-gray-200 border border-white/20"
+            >
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"
+              ></span>
+              <span>Espacio listo para reproducir o incrustar video</span>
+            </div>
+          </div>
+
+          <!-- Bottom Control Bar Mockup -->
+          <div
+            class="absolute bottom-0 inset-x-0 bg-linear-to-t from-black/80 via-black/40 to-transparent p-4 flex items-center justify-between text-xs text-gray-400 z-30"
+          >
+            <span class="flex items-center gap-2">
+              <CheckCircle2 class="w-4 h-4 text-[#FCE300]" />
+              Formato de alta definición (HD)
+            </span>
+            <span>IER La Aurora • Archivo Institucional</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- More Events Coming Soon Section -->
+    <div
+      class="mt-12 text-center bg-white/60 backdrop-blur-sm border border-gray-200 rounded-2xl p-8 max-w-3xl mx-auto shadow-sm"
+    >
+      <div
+        class="inline-flex p-3 rounded-full bg-[#000080]/5 text-[#000080] mb-3"
+      >
+        <Sparkles class="w-6 h-6 text-[#000080]" />
+      </div>
+      <h3 class="text-xl font-bold text-[#000080] mb-2">
+        Más eventos próximamente
+      </h3>
+      <p class="text-gray-600 text-sm md:text-base max-w-xl mx-auto">
+        Continuaremos documentando y publicando las actividades pedagógicas,
+        deportivas, culturales y ambientales de nuestra comunidad educativa.
+      </p>
+    </div>
+  </div>
+</section>

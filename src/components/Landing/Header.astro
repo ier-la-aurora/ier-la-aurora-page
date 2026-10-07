@@ -1,4 +1,5 @@
 ---
+import { Calendar } from "@lucide/astro";
 ---
 
 <!-- Hero Section -->
@@ -23,14 +24,18 @@
       Una educación integral que inspira, innova y transforma vidas desde los
       primeros pasos.
     </p>
-    <div class="flex flex-col md:flex-row gap-4 justify-center">
+    <div class="flex flex-col sm:flex-row flex-wrap gap-4 justify-center items-center">
       <a href='#nosotros' class="bg-[#FCE300] text-[#000080] px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-white hover:scale-105 transition-all duration-300">
         Conoce más
+      </a>
+      <a href="/events" class="bg-[#FCE300] text-[#000080] px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-white hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 group">
+        <Calendar class="w-5 h-5 transition-transform group-hover:scale-110" />
+        <span>Eventos</span>
       </a>
       <a href='#contacto' class="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-[#000080] hover:scale-105 transition-all duration-300">
         Contáctanos
       </a>
-      <a href="/public/SIEE_Aurora_2025.docx" download="SIEE_Aurora_2025.docx" class="bg-[#FCE300] text-[#000080] px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-white hover:scale-105 transition-all duration-300">
+      <a href="/public/SIEE_Aurora_2025.docx" download="SIEE_Aurora_2025.docx" class="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-[#000080] hover:scale-105 transition-all duration-300">
         Descargar SIEE {new Date().getFullYear()}
       </a>
     </div>
